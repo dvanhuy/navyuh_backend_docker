@@ -17,11 +17,11 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('password')->nullable();
-            $table->unsignedBigInteger('id_creator')->nullable();
+            $table->unsignedBigInteger('creator_id')->nullable();
             $table->text('description')->nullable();
             $table->string('findable')->nullable();
             $table->string('joinable')->nullable();
-            $table->foreign('id_creator')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('creator_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
             $table->softDeletes();
         });

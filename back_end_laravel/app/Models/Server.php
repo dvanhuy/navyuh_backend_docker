@@ -12,7 +12,7 @@ class Server extends Model
     protected $fillable = [
         'name',
         'password',
-        'id_creator',
+        'creator_id',
         'description',
         'findable',
         'joinable',

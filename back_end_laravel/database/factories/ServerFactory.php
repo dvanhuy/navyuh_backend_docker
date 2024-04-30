@@ -22,7 +22,7 @@ class ServerFactory extends Factory
         return [
             'name' => fake()->name(),
             'password' => '',
-            'id_creator' => '1',
+            'creator_id' => '1',
             'description' => fake()->text(30)
         ];
     }

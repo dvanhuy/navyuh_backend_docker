@@ -16,10 +16,10 @@ return new class extends Migration
         Schema::create('messages', function (Blueprint $table) {
             $table->id();
             $table->text('content');
-            $table->unsignedBigInteger('id_sender');
-            $table->unsignedBigInteger('id_server');
-            $table->foreign('id_sender')->references('id')->on('users')->onDelete('cascade');
-            $table->foreign('id_server')->references('id')->on('servers')->onDelete('cascade');
+            $table->unsignedBigInteger('sender_id');
+            $table->unsignedBigInteger('server_id');
+            $table->foreign('sender_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('server_id')->references('id')->on('servers')->onDelete('cascade');
             $table->timestamps();
             $table->softDeletes();
         });

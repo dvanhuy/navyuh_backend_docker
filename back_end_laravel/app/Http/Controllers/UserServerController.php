@@ -15,7 +15,7 @@ class UserServerController extends Controller
     {
         $user = new User();
         $user = $user->getUserFromToken($request);
-        $servers = JoiningDetails::where('id_user', $user['id'])->get();
+        $servers = JoiningDetails::where('user_id', $user['id'])->get();
         return response($servers);
         // return response(Server::all());
     }
@@ -30,8 +30,8 @@ class UserServerController extends Controller
         $user = new User();
         $user = $user->getUserFromToken($request);
         $join = DB::table('joining_details')
-        ->where('id_user',$user->id)
-        ->where('id_server',$idserver->id)
+        ->where('user_id',$user->id)
+        ->where('server_id',$idserver->id)
         ->first();
 
         if ($join){
@@ -41,8 +41,8 @@ class UserServerController extends Controller
         }
         
         $check = JoiningDetails::create([
-            'id_user' => $user->id,
-            'id_server' =>  $idserver->id,
+            'user_id' => $user->id,
+            'server_id' =>  $idserver->id,
         ]);
         
         if ($check){

@@ -10,8 +10,8 @@ class JoiningDetails extends Model
     use HasFactory;
     protected $table = 'joining_details';
     protected $fillable = [
-        'id_user',
-        'id_server',
+        'user_id',
+        'server_id',
         'role',
     ];
 }

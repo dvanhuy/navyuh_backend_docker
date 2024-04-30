@@ -15,11 +15,11 @@ return new class extends Migration
     {
         Schema::create('joining_details', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('id_user');
-            $table->unsignedBigInteger('id_server');
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('server_id');
             $table->string('role')->default('none');
-            $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade');
-            $table->foreign('id_server')->references('id')->on('servers')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('server_id')->references('id')->on('servers')->onDelete('cascade');
             $table->timestamps();
         });
     }
