@@ -1,0 +1,1 @@
+npx laravel-echo-server start
